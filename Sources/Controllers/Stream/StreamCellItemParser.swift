@@ -1,13 +1,3 @@
-//
-//  StreamCellItemParser.swift
-//  Ello
-//
-//  Created by Sean Dougherty on 12/16/14.
-//  Copyright (c) 2014 Ello. All rights reserved.
-//
-
-import Foundation
-
 public struct StreamCellItemParser {
 
     public init(){}

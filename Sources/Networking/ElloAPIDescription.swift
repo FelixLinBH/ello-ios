@@ -185,6 +185,8 @@ extension ElloAPI: CustomStringConvertible, CustomDebugStringConvertible {
             return "UserStreamFollowers"
         case .UserStreamFollowing:
             return "UserStreamFollowing"
+        case .UserStreamPosts:
+            return "UserStreamPosts"
         case .UserNameAutoComplete:
             return "UserNameAutoComplete"
         }

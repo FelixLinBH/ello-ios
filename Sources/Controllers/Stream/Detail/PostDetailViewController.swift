@@ -189,6 +189,7 @@ public final class PostDetailViewController: StreamableViewController {
 
 }
 
+// MARK: PostDetailViewController: StreamDestination
 extension PostDetailViewController: StreamDestination {
 
     public func setItems(items: [StreamCellItem]) {
