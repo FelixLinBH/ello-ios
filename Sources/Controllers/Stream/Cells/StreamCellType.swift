@@ -53,9 +53,14 @@ public enum StreamCellType: Equatable {
     public enum PlaceholderType {
         case CategoryList
         case PeopleToFollow
-        case Lovers
-        case Reposters
-        case Comments
+
+        case ProfileHeader
+        case ProfilePosts
+
+        case PostHeader
+        case PostLovers
+        case PostReposters
+        case PostComments
     }
 
     static let all = [
@@ -78,7 +83,7 @@ public enum StreamCellType: Equatable {
         SeeMoreComments,
         Spacer(height: 0.0),
         FullWidthSpacer(height: 0.0),
-        Placeholder(.Comments),
+        Placeholder(.CategoryList),
         StreamLoading,
         Text(data: nil),
         Toggle,
@@ -116,9 +121,12 @@ public enum StreamCellType: Equatable {
             switch type {
             case .CategoryList: return 1001
             case .PeopleToFollow: return 1002
-            case .Lovers: return 1003
-            case .Reposters: return 1004
-            case .Comments: return 1005
+            case .ProfileHeader: return 1003
+            case .ProfilePosts: return 1004
+            case .PostHeader: return 1005
+            case .PostLovers: return 1006
+            case .PostReposters: return 1007
+            case .PostComments: return 1008
             }
         case RepostHeader: return 12
         case SeeMoreComments: return 13
@@ -212,7 +220,7 @@ public enum StreamCellType: Equatable {
         case Unknown: return ProfileHeaderCellPresenter.configure
         case UserAvatars: return UserAvatarsCellPresenter.configure
         case UserListItem: return UserListItemCellPresenter.configure
-        default: return { (_, _, _, _, _) in }
+        default: return { _ in }
         }
     }
 
@@ -346,7 +354,7 @@ public enum StreamCellType: Equatable {
             CreateComment,
             FollowAll(data: nil),
             Notification,
-            Placeholder(.Comments),
+            Placeholder(.CategoryList),
             OnboardingHeader(data: nil),
             Spacer(height: 0.0),
             FullWidthSpacer(height: 0.0),
